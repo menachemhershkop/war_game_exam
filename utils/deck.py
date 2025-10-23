@@ -21,7 +21,6 @@ def create_deck() -> list[dict]:
             full_desc.append({type:card})
     return full_desc
 def shuffle(deck:list[dict]) -> list[dict]:
-    new_deck=[]
     for i in range(1000):
         index1=random.randint(1,len(deck)-1)
         index2=random.randint(1,len(deck)-1)
