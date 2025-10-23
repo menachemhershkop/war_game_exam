@@ -21,11 +21,11 @@ def create_deck() -> list[dict]:
             full_desc.append({type:card})
     return full_desc
 def shuffle(deck:list[dict]) -> list[dict]:
-    while True:
-        index1=create_deck()[random.randint]
-        index2=create_deck()[random.randint]
-        if index1== index2:
-            print("Try agin")
+    new_deck=[]
+    for i in range(1000):
+        index1=random.randint(1,len(deck)-1)
+        index2=random.randint(1,len(deck)-1)
+        if deck[index1]== deck[index2]:
             continue
-        index1, index2=index2,index1
-        return deck
+        deck[index1], deck[index2]=deck[index2],deck[index1]
+    return deck
