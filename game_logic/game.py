@@ -17,4 +17,12 @@ def init_game()->dict:
     return {"deck":d,"player1":p1,"player2":p2}
 
 def play_round(p1:dict,p2:dict):
-    game=init_game()
+    pleyers=init_game()
+    player1=pleyers["player1"].pop("hand")
+    player2=pleyers["player2"].pop("hand")
+    if player1> player2:
+        pleyers["player1"].update("wom_pile")
+    if player1 < player2:
+        pleyers["player2"].update("wom_pile")
+    else:
+        pass
